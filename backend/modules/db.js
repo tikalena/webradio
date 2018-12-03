@@ -26,7 +26,8 @@ const select = (connection, callback) => {
 
 const insert = (data, connection, callback) => {
   // simple query
-  connection.execute(
+  console.log(data);
+  /*connection.execute(
       'INSERT INTO wp_users (ufname, ulname, ufile, uthumb) VALUES (?, ?, ?, ?);',
       data,
       (err, results, fields) => {
@@ -35,7 +36,7 @@ const insert = (data, connection, callback) => {
         console.log(err);
         callback();
       },
-  );
+  );*/
 };
 
 module.exports = {

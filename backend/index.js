@@ -16,27 +16,41 @@ app.use(express.static('pub'));
 //DB connect
 const connection = db.connect();
 
-db.select(connection, (results) => {
-});
+const insertNew = (data, res, next) => {
+  db.insert(data, connection, () => {
+    next();
+  });
+};
+
 
 app.post('/upload', upload.single('mp3'), (req, res, next) => {
   //reading id3-tags
   const tags=id3.read(req.file.destination+req.file.filename);
-  console.log(tags.title);
-  console.log(tags.artist);
+  //console.log(tags.title);
+  //console.log(tags.artist);
 
   //reading mp3-file duration
   const buffer = fs.readFileSync(req.file.destination+req.file.filename);
-  const duration = mp3dur(buffer);
-  console.log(duration);
+  tags.duration = mp3dur(buffer);
+  //console.log(tags.duration);
 
   //rename files upon upload
   fs.rename(req.file.destination+req.file.filename, req.file.destination+req.file.originalname, (err) =>{
       if (err) throw err;
   });
 
-  //console.log(req.file);
-  next();
+  const data = [
+    tags.title,
+    tags.artist,
+    tags.duration,
+    req.file.originalname
+  ];
+
+  insertNew(data,req,next);
+});
+
+app.use('/upload', (req, res) => {
+  res.send(req.custom);
 });
 
 //listen to port 8000
