@@ -34,5 +34,5 @@ Temporary Items
 
 node_modules
 package-lock.json
-pub/files
+pub/files/*
 
