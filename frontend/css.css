@@ -107,11 +107,6 @@ button:hover {
     position: relative;
 }
 
-.imgcontainer2 {
-    text-align: center;
-    margin: 5px -10px 50px 0;
-    position: relative;
-}
 
 .container {
     padding: 16px;
@@ -127,7 +122,7 @@ span.psw {
     display: none; /* Hidden by default */
     float: right;
     top: 0;
-    width: 20%; /* Full width */
+    width: 30%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     padding: 0;
