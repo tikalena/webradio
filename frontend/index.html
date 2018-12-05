@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,13 +12,14 @@
 <button onclick="document.getElementById('forma').style.display='block'" style="width:auto;">Login</button>
 
 <div id="forma" class="modal">
-
+    <input type='checkbox' id='form-switch'>
     <div id="id01">
-
         <form class="modal-content animate" action="/action_page.php">
             <div class="imgcontainer">
                 <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
             </div>
+
+            <label id="reg" for='form-switch'>Be an active listener. Register HERE</label>
 
             <div class="container">
                 <label for="uname"><b>Username</b></label>
@@ -39,36 +39,31 @@
                 <span class="psw">Forgot <a href="#">password?</a></span>
             </div>
         </form>
-            <button onclick="document.getElementById('id02').style.display='block'" class="regbtn">Would you like to be an active listener.<br> Register here</button>
-
     </div>
 
+    <div id="id02">
+        <form class="modal-content animate" action="/action_page.php">
+            <div class="imgcontainer2">
+                <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+            </div>
+            <div class="container">
 
-        <div id="id02">
-            <form class="modal-content animate" action="/action_page.php">
-                <div class="imgcontainer2">
-                    <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-                </div>
-                <div class="container">
-                <h1>Register</h1>
-                <p>Please fill in this form to create an account.</p>
-                <hr>
-                <label for="user"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="username" required>
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Username" required>
 
                 <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Enter Email" name="email" required>
+                <input type="email" placeholder="Email" required>
 
-                <label for="passw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Password" required>
 
-                <label for="psw-repeat"><b>Repeat Password</b></label>
-                <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-                <hr>
-                <button type="submit" class="registerbtn">Register</button>
-                </div>
-            </form>
+                <label for="psw"><b>Re Password</b></label>
+                <input type="password" placeholder="Re Password" required>
 
+                <button type='submit'>Register</button>
+                <label for='form-switch'>Already Member ? Sign In Now..</label>
+            </div>
+        </form>
     </div>
 
 </div>

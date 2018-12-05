@@ -6,10 +6,26 @@ body{
 
 /*hide*/
 
-#id02{
-    display: none;
-    margin-top: 50%;
 
+#form-switch {
+    display:none
+}
+#id02 {
+    display:none;
+}
+#form-switch:checked~#id02 {
+    display:block
+}
+#form-switch:checked~#id01 {
+    display:none
+}
+label {
+    cursor:pointer
+}
+#reg{
+    margin-left: 5%;
+    font-size: 17px;
+    font-weight: bold;
 }
 
 
@@ -41,7 +57,7 @@ body{
 }
 /*modal*/
 /* Full-width input fields */
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=email] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
