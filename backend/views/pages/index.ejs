@@ -1,0 +1,9 @@
+<% include ../snippet/header %>
+<% if (items.length > 0) { %>
+    <% items.forEach ((item) => { %>
+    <div><%= item.SID+' '+item.Name+' '+item.Duration %></div>
+<% })} else {%>
+<div>No data</div>
+<% }%>
+
+<% include ../snippet/footer %>
