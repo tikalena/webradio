@@ -22,10 +22,9 @@ body{
 label {
     cursor:pointer
 }
-#reg{
-    margin-left: 5%;
-    font-size: 17px;
-    font-weight: bold;
+h2{
+    padding: 12px 20px;
+    margin: 8px 0;
 }
 
 
@@ -94,11 +93,6 @@ button:hover {
     float: left;
 }
 
-.regbtn{
-    padding: 10px 20x;
-    background-color: steelblue;
-    float: bottom;
-}
 
 /* Center the image and position the close button */
 .imgcontainer {
