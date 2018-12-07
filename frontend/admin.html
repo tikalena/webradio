@@ -5,6 +5,7 @@
     <title>Admin page</title>
     <link rel="stylesheet" href="css/admin.css">
 
+
 </head>
 <body>
 <div class="container" >
@@ -12,74 +13,124 @@
     <div id="database" class="box">
     <h1>Database</h1>
 
-        <a href="#win1" class="button">Category</a>
-        <br><br><br>
+        <button onclick="myFunction()">Category</button>
 
-        <a href="#win2" class="button2">Category</a>
-        <br><br><br>
+        <div id="category">
 
-        <a href="#win3" class="button3">Category</a>
+            <input type="text" id="myInput" onkeyup="mySearch()" placeholder="Enter name.." title="Type in a name">
 
-        <a href="#x" class="overlay" id="win1"></a>
-        <div class="popup">
-            <h1>Category 1</h1>
-            <audio controls>
-                <source src= type="audio/mpeg">
-            </audio>
-            <br>
-            <audio controls>
-                <source src= type="audio/mpeg">
-            </audio>
-            <a class="close"title="Закрыть" href="#close"></a>
+            <ul id="music">
+                <li><a href="#win1">Adele</a>
+                    <audio controls>
+                        <source src= type="audio/mpeg">
+                    </audio></li>
+
+                <li><a href="#win2">John Newman</a>
+                    <audio controls>
+                        <source src= type="audio/mpeg">
+                    </audio></li>
+                <li><a href="#win3">Bob Sinclaire</a>
+                    <audio controls>
+                        <source src= type="audio/mpeg">
+                    </audio></li>
+
+                <li><a href="#win4">Avicii</a>
+                    <audio controls>
+                        <source src= type="audio/mpeg">
+                    </audio></li>
+
+                <li><a href="#win5">Christina Aguilera</a>
+                    <audio controls>
+                        <source src= type="audio/mpeg">
+                    </audio></li>
+
+                <li><a href="#win6">Sting</a>
+                    <audio controls>
+                        <source src= type="audio/mpeg">
+                    </audio></li>
+        </ul>
+            <a href="#x" class="overlay" id="win1"></a>
+            <div class="popup">
+                <h1>Adele</h1>
+                <p>Duration 3:05</p>
+            </div>
+            <a href="#x" class="overlay" id="win2"></a>
+            <div class="popup">
+                <h1>John Newman</h1>
+                <p>Duration 3:55</p>
+            </div>
+            <a href="#x" class="overlay" id="win3"></a>
+            <div class="popup">
+                <h1>Bob Sinclaire</h1>
+                <p>Duration 3:45</p>
+            </div>
+            <a href="#x" class="overlay" id="win4"></a>
+            <div class="popup">
+                <h1>Avicii</h1>
+                <p>Duration 2:45</p>
+            </div>
+            <a href="#x" class="overlay" id="win5"></a>
+            <div class="popup">
+                <h1>Christina Aguilera</h1>
+                <p>Duration 3:23</p>
+            </div>
+            <a href="#x" class="overlay" id="win6"></a>
+            <div class="popup">
+                <h1>Sting</h1>
+                <p>Duration 3:45</p>
+            </div>
         </div>
 
-        <a href="#x" class="overlay" id="win2"></a>
-        <div class="popup">
-            <h1>Category 2</h1>
-            <audio controls>
-                <source src= type="audio/mpeg">
-            </audio>
-            <br>
-            <audio controls>
-                <source src= type="audio/mpeg">
-            </audio>
-
-        </div>
-
-        <a href="#x" class="overlay" id="win3"></a>
-        <div class="popup">
-            <h1>Category 3</h1>
-            <audio controls>
-                <source src= type="audio/mpeg">
-            </audio>
-            <br>
-            <audio controls>
-                <source src= type="audio/mpeg">
-            </audio>
-            <a class="close" title="Закрыть" href="#close"></a>
-        </div>
 </div>
 
     <div id="playlist" class="box">
     <h1>Playlist</h1>
-        <form class="example" action="action_page.php">
-            <input type="text" placeholder="Enter song name.." name="search">
-            <button type="submit">Search</button>
-        </form>
 
-    <ul id="list">
-        <audio controls>
-        <source src= type="audio/mpeg">
-    </audio>
-        <br></br>
-        <audio controls>
-            <source src= type="audio/mpeg">
-        </audio>
-    </ul>
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 2</div>
+                <div class="text">Data</div>
+                <ul id="list">
+                    <audio controls>
+                        <source src= type="audio/mpeg">
+                    </audio>
+                    <br></br>
+                    <audio controls>
+                        <source src= type="audio/mpeg">
+                    </audio>
+                </ul>
+
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 2</div>
+                <div class="text">Data</div>
+
+                <ul id="list">
+                    <audio controls>
+                        <source src= type="audio/mpeg">
+                    </audio>
+                    <br></br>
+                    <audio controls>
+                        <source src= type="audio/mpeg">
+                    </audio>
+                </ul>
+
+            </div>
+
+
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        </div>
+
     </div>
 
 </div>
 
+<script src="js/admin.js"></script>
 
 </body>
 </html>

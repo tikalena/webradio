@@ -1,12 +1,11 @@
 body{
     background-color: whitesmoke;
-    font-family: "Ink Free";
 
 }
 
 h1{
     text-align: center;
-    font-family: "Ink Free";
+    font-family: monospace;
  }
 
 div.box {
@@ -16,6 +15,19 @@ div.box {
     float: left;
     height: 530px;
 }
+
+#category{
+    box-sizing: border-box;
+    width: 50%;
+    border: 5px double cornflowerblue;
+    float: left;
+    height: 400px;
+    width: 400px;
+    display: none;
+    margin-left: 35%;
+    overflow: scroll;
+}
+
 
 /* modal button*/
 .button, .button2, .button3 {
@@ -30,7 +42,7 @@ div.box {
     width: 20%;
 
     border-radius: 8px;
-    font-family: "Ink Free";
+    font-family: monospace;
     font-size: 20px;
 }
 
@@ -89,8 +101,7 @@ div.box {
 /* modal */
 .overlay:target+.popup {
     -webkit-transform: translate(-50%, 0);
-    -ms-transform: translate(-50%, 0);
-    -o-transform: translate(-50%, 0);
+
     transform: translate(-50%, 0);
     top: 20%;
 }
@@ -116,11 +127,11 @@ button {
     margin-left: 10px;
     border: none;
     cursor: pointer;
-    width: 20%;
+    width: 30%;
     float: left;
     border-radius: 8px;
 
-    font-family: "Ink Free";
+    font-family: monospace;
     font-size: 20px;
 }
 
@@ -129,23 +140,113 @@ button:hover {
 }
 
 /* SEARCH */
-/* Style the search field */
-form.example input[type=text] {
-    padding: 10px;
-    margin-left: 10px;
-    font-size: 21px;
-    border: 1px solid grey;
-    width: 45%;
-    background: #f1f1f1;
-    float: left;
-    border-radius: 8px;
-    font-family: "Ink Free";
+#myInput {
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 80%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
 }
 
+#music {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
 
-/* Clear floats */
-form.example::after {
-    content: "";
-    clear: both;
-    display: table;
+#music li a {
+    border: 1px solid #ddd;
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block
+}
+
+#myUL li a:hover:not(.header) {
+    background-color: #eee;
+}
+
+/* Slide */
+/* Slideshow container */
+#list{
+    margin-top: 10%;
+}
+
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+    color: cornflowerblue;
+    font-size: 20px;
+    padding: 8px 12px;
+    font-family: monospace;
+    width: 100%;
+    text-align: center;
+}
+
+/* Number text (1/2 etc) */
+.numbertext {
+    color: cornflowerblue;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+    .prev, .next,.text {font-size: 11px}
 }

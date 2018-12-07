@@ -1,6 +1,6 @@
 body{
     background-color: whitesmoke;
-    font-family: "Ink Free";
+    font-family: monospace;
 
 }
 
@@ -61,7 +61,7 @@ input[type=text], input[type=password], input[type=email] {
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
-    font-family: "Ink Free";
+    font-family: monospace;
 }
 
 /* Set a style for all buttons */
@@ -75,7 +75,7 @@ button {
     width: 100%;
     float: right;
     border-radius: 8px;
-    font-family: "Ink Free";
+    font-family: monospace;
     font-size: 20px;
 }
 
