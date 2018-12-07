@@ -1,0 +1,151 @@
+body{
+    background-color: whitesmoke;
+    font-family: "Ink Free";
+
+}
+
+h1{
+    text-align: center;
+    font-family: "Ink Free";
+ }
+
+div.box {
+    box-sizing: border-box;
+    width: 50%;
+    border: 5px double cornflowerblue;
+    float: left;
+    height: 530px;
+}
+
+/* modal button*/
+.button, .button2, .button3 {
+    background-color: lightslategrey;
+    color: white;
+    padding: 10px;
+
+    margin-left: 10px;
+
+    border: none;
+    cursor: pointer;
+    width: 20%;
+
+    border-radius: 8px;
+    font-family: "Ink Free";
+    font-size: 20px;
+}
+
+.button:hover, .button2:hover, .button3:hover {
+    background: cornflowerblue;
+}
+
+/* ovarlay  */
+.overlay {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    display: none;
+    /* фон затемнения */
+    background-color: rgba(0, 0, 0, 0.65);
+    position: fixed; /* фиксированное поцизионирование */
+    cursor: default; /* тип курсара */
+}
+/* активируем слой затемнения */
+.overlay:target {
+    display: block;
+}
+
+
+/* modal */
+.popup {
+    top: -100%;
+    right: 0;
+    left: 50%;
+    font-size: 14px;
+    z-index: 20;
+    margin: 0;
+    width: 85%;
+    min-width: 320px;
+    max-width: 600px;
+    /* scroll */
+    position: fixed;
+    padding: 15px;
+    border: 5px solid #383838;
+    background: cornflowerblue;
+
+    /* radius */
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+
+    /* shadow */
+    -webkit-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    -webkit-transform: translate(-50%, -500%);
+    transform: translate(-50%, -500%);
+    -webkit-transition: -webkit-transform 0.6s ease-out;
+    transition: transform 0.6s ease-out;
+}
+/* modal */
+.overlay:target+.popup {
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    top: 20%;
+}
+
+/* frame */
+.popup embed,
+.popup iframe {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display:block;
+    margin: auto;
+    min-width: 320px;
+    max-width: 600px;
+    width: 100%;
+}
+
+button {
+    background-color: lightslategrey;
+    color: white;
+    padding: 10px;
+    margin-left: 10px;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+    float: left;
+    border-radius: 8px;
+
+    font-family: "Ink Free";
+    font-size: 20px;
+}
+
+button:hover {
+    background: cornflowerblue;
+}
+
+/* SEARCH */
+/* Style the search field */
+form.example input[type=text] {
+    padding: 10px;
+    margin-left: 10px;
+    font-size: 21px;
+    border: 1px solid grey;
+    width: 45%;
+    background: #f1f1f1;
+    float: left;
+    border-radius: 8px;
+    font-family: "Ink Free";
+}
+
+
+/* Clear floats */
+form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+}
