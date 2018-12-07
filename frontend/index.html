@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Lounge_radio</title>
-    <link rel="stylesheet" href="css.css">
-    <script src="js.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+
+
 </head>
 <body>
 
@@ -14,14 +15,13 @@
 <div id="forma" class="modal">
     <input type='checkbox' id='form-switch'>
     <div id="id01">
-        <form class="modal-content animate" action="/action_page.php">
-            <div class="imgcontainer">
-                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-            </div>
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
 
+        <form class="modal-content animate" action="/action_page.php">
 
 
             <div class="container">
+
                 <label for="uname"><b>Username</b></label>
                 <input type="text" placeholder="Enter Username" name="uname" required>
 
@@ -38,18 +38,14 @@
                 <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
             </div>
 
-
-
-
-
         </form>
     </div>
 
     <div id="id02">
         <form class="modal-content animate" action="/action_page.php">
-            <div class="imgcontainer">
-                <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-            </div>
+
+            <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+
             <div class="container">
             <h1>Like..listen..enjoy and register</h1>
                 <label for="uname"><b>Username</b></label>
@@ -77,5 +73,7 @@
     <input type="checkbox" value="None" id="playpause" name="check" />
     <label for="playpause" tabindex=1></label>
 </div>
+
+<script src="js/main.js"></script>
 </body>
 </html>

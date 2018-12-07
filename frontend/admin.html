@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin page</title>
+    <link rel="stylesheet" href="css/admin.css">
+
+</head>
+<body>
+<div class="container" >
+
+    <div id="database" class="box">
+    <h1>Database</h1>
+
+        <a href="#win1" class="button">Category</a>
+        <br><br><br>
+
+        <a href="#win2" class="button2">Category</a>
+        <br><br><br>
+
+        <a href="#win3" class="button3">Category</a>
+
+        <a href="#x" class="overlay" id="win1"></a>
+        <div class="popup">
+            <h1>Category 1</h1>
+            <audio controls>
+                <source src= type="audio/mpeg">
+            </audio>
+            <br>
+            <audio controls>
+                <source src= type="audio/mpeg">
+            </audio>
+            <a class="close"title="Закрыть" href="#close"></a>
+        </div>
+
+        <a href="#x" class="overlay" id="win2"></a>
+        <div class="popup">
+            <h1>Category 2</h1>
+            <audio controls>
+                <source src= type="audio/mpeg">
+            </audio>
+            <br>
+            <audio controls>
+                <source src= type="audio/mpeg">
+            </audio>
+
+        </div>
+
+        <a href="#x" class="overlay" id="win3"></a>
+        <div class="popup">
+            <h1>Category 3</h1>
+            <audio controls>
+                <source src= type="audio/mpeg">
+            </audio>
+            <br>
+            <audio controls>
+                <source src= type="audio/mpeg">
+            </audio>
+            <a class="close" title="Закрыть" href="#close"></a>
+        </div>
+</div>
+
+    <div id="playlist" class="box">
+    <h1>Playlist</h1>
+        <form class="example" action="action_page.php">
+            <input type="text" placeholder="Enter song name.." name="search">
+            <button type="submit">Search</button>
+        </form>
+
+    <ul id="list">
+        <audio controls>
+        <source src= type="audio/mpeg">
+    </audio>
+        <br></br>
+        <audio controls>
+            <source src= type="audio/mpeg">
+        </audio>
+    </ul>
+    </div>
+
+</div>
+
+
+</body>
+</html>
