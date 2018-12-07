@@ -10,49 +10,59 @@ const upload  = multer({dest: 'pub/files/'});
 const id3     = require('node-id3');
 const mp3dur  = require('get-mp3-duration');
 
-
+app.set('view engine', 'ejs');
 app.use(express.static('pub'));
 
 //DB connect
 const connection = db.connect();
 
-const insertNew = (data, res, next) => {
-  db.insert(data, connection, () => {
-    next();
+// render /test
+app.get('/test', (req,res) => {
+  connection.query('select * from Song', (err,result) =>{
+    console.log(result);
+    res.render('pages/index', {
+      siteTitle: 'Hello world',
+      pageTitle: 'Testing',
+      items: result
+    });
   });
-};
+});
 
+// render /upload
+app.post('/upload', upload.array('mp3'), (req, res, next) => {
+  req.files.forEach((file) =>{
+    const uploadFile    = file.destination+file.filename,
+          originalFile  = file.destination+file.originalname,
+          fileName      = file.originalname;
+    //reading id3-tags
+    const tags=id3.read(uploadFile);
 
-app.post('/upload', upload.single('mp3'), (req, res, next) => {
-  //reading id3-tags
-  const tags=id3.read(req.file.destination+req.file.filename);
-  //console.log(tags.title);
-  //console.log(tags.artist);
+    //reading mp3-file duration
+    const buffer = fs.readFileSync(uploadFile);
+    tags.duration = mp3dur(buffer);
 
-  //reading mp3-file duration
-  const buffer = fs.readFileSync(req.file.destination+req.file.filename);
-  tags.duration = mp3dur(buffer);
-  //console.log(tags.duration);
-
-  //rename files upon upload
-  fs.rename(req.file.destination+req.file.filename, req.file.destination+req.file.originalname, (err) =>{
+    //rename files upon upload
+    fs.rename(uploadFile, originalFile, (err) =>{
       if (err) throw err;
+    });
+
+    const data = {
+      title: tags.title,
+      artist: tags.artist,
+      dur: tags.duration,
+      file: fileName
+    };
+    db.insert(data, connection, () => {
+      next();
+    });
   });
-
-  const data = [
-    tags.title,
-    tags.artist,
-    tags.duration,
-    req.file.originalname
-  ];
-
-  insertNew(data,req,next);
 });
 
 app.use('/upload', (req, res) => {
-  res.send(req.custom);
+  res.send('All done');
 });
 
 //listen to port 8000
-console.log("Listeting to http://localhost:8000");
-app.listen(8000);
+app.listen(8000, () => {
+  console.log("Listening to http://localhost:8000");
+});
