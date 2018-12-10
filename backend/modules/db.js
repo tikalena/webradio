@@ -1,4 +1,7 @@
 'use strict';
+
+let sql, insert;
+
 const mysql = require('mysql2');
 const connect = () => {
   return mysql.createConnection({
@@ -41,8 +44,32 @@ const insertToSong = (data,connection, call) => {
   });
 };
 
-const apiCall = (connection, id, callback) => {
-  connection.execute('select * from Category where CID = ?',[id], (err, result) => {
+// serving data for API
+const apiCall = (connection, data, callback) => {
+  const what=data.what, id=data.id, catid=data.catid;
+  if (what==='cat') {
+    if (id) {
+      sql = 'select * from Category where CID = ?';
+      insert = [id];
+    }
+    else {
+      sql = 'select * from Category';
+    }
+  }
+
+  else if (what==='song') {
+    if (id) {
+      sql = 'select * from Song where SID = ?';
+      insert = [id];
+    }
+    else {
+      sql = 'select * from Song';
+    }
+  }
+  else {
+    sql = 'select 1';
+  }
+  connection.execute(sql,insert, (err, result) => {
     if (err) throw err;
     callback(result);
   });

@@ -64,10 +64,20 @@ app.use('/upload', (req, res) => {
   res.send('All done');
 });
 
-//rendering /api-path
-app.get ('/api', (req,res) => {
-  db.apiCall(connection, 2, test =>{
-    res.send(test);
+//rendering /api/:id-path
+app.get ('/api/', (req,res) => {
+  res.json({'Error':'1'});
+});
+
+app.get ('/api/:path', (req,res) => {
+  db.apiCall(connection, {id:'', what: req.params.path}, returnData =>{
+    res.json(returnData);
+  });
+});
+
+app.get ('/api/:path/:id', (req,res) => {
+  db.apiCall(connection, {id:req.params.id, what: req.params.path}, returnData =>{
+    res.json(returnData);
   });
 });
 
