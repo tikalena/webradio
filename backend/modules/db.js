@@ -41,9 +41,10 @@ const insertToSong = (data,connection, call) => {
   });
 };
 
-const apiCall = (connection, id) => {
-  connection.execute('select * from Category where ?',id, (err, result) => {
-    //return result;
+const apiCall = (connection, id, callback) => {
+  connection.execute('select * from Category where CID = ?',[id], (err, result) => {
+    if (err) throw err;
+    callback(result);
   });
 };
 

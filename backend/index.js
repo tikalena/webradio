@@ -64,16 +64,11 @@ app.use('/upload', (req, res) => {
   res.send('All done');
 });
 
-app.get ('/api', (res,req) => {
-  // const text = db.apiCall(connection, 1);
-  let data          = {
-    'title': 'Title',
-    'artist': 'Artist',
-    'dur': 'Duration',
-    'file': 'Filename'
-  };
-  //res.json (data);
-  res.json({"foo": "bar"});
+//rendering /api-path
+app.get ('/api', (req,res) => {
+  db.apiCall(connection, 2, test =>{
+    res.send(test);
+  });
 });
 
 //something went wrong, inform about that with 404
