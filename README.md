@@ -16,6 +16,12 @@ DB_PASS = DB USER PASSWORD
 PORT    = PORT OF APPLICATION
 ```
 
+# Run this app
+
+To start this app use this command in terminal:
+```
+npm run start
+```
 # API
 
 ```
