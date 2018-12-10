@@ -6,7 +6,7 @@ Run
 ```
 npm install
 ```
-in the **backend** directory, then create **.env** file in the same directory with the follow code inside:
+to install dependencies, then create **.env** file in the root directory with the follow code inside:
 
 ```
 DB_HOST = HOST IP
