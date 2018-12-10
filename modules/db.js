@@ -84,14 +84,25 @@ const apiCall = (connection, data, callback) => {
   else {
     sql = 'select 1';
   }
-  connection.execute(sql,insert, (err, result) => {
+  connection.execute(sql, insert, (err, result) => {
     if (err) throw err;
     callback(result);
   });
 };
 
+const login = (user, connect, callback) => {
+  sql = 'select * from User where Login = ?';
+  insert = user;
+  connect.execute(sql,insert, (err, result) => {
+    if (err) throw err;
+    callback(result);
+  });
+};
+
+
 module.exports = {
   connect: connect,
   insert: insertNewFile,
   apiCall: apiCall,
+  login: login,
 };

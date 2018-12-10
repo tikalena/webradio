@@ -20,7 +20,7 @@ PORT    = PORT OF APPLICATION
 
 To start this app use this command in terminal:
 ```
-npm run start
+npm start
 ```
 # API
 

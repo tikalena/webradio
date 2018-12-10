@@ -13,6 +13,9 @@ function showProfile(){
   }
 }
 
+function validateForm() {
+
+}
 
 /*validate form
 var attempt = 3;
