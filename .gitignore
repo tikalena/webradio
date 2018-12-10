@@ -33,6 +33,5 @@ Temporary Items
 .apdisk
 
 node_modules
-package-lock.json
 pub/files/*
 
