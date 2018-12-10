@@ -46,7 +46,7 @@ const insertToSong = (data,connection, call) => {
 
 // serving data for API
 const apiCall = (connection, data, callback) => {
-  const what=data.what, id=data.id, catid=data.catid;
+  const what=data.what, id=data.id;
   if (what==='cat') {
     if (id) {
       sql = 'select * from Category where CID = ?';
@@ -64,6 +64,21 @@ const apiCall = (connection, data, callback) => {
     }
     else {
       sql = 'select * from Song';
+    }
+  }
+
+  else if (what==='songs') {
+    sql = 'select * from Song where CID = ?';
+    insert = [id];
+  }
+
+  else if (what==='artist') {
+    if (id) {
+      sql = 'select * from Artist where AID = ?';
+      insert = [id];
+    }
+    else {
+      sql = 'select * from Artist';
     }
   }
   else {
