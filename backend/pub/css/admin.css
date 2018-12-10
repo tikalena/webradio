@@ -25,7 +25,6 @@ div.box {
 
 #category{
     box-sizing: border-box;
-    width: 50%;
     border: 5px double cornflowerblue;
     float: left;
     height: 400px;
@@ -127,7 +126,7 @@ div.box {
     width: 100%;
 }
 
-button {
+button, input {
     background-color: lightslategrey;
     color: white;
     padding: 10px;

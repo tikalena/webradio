@@ -9,6 +9,7 @@ const connect = () => {
   });
 };
 
+//check if info of file exist in DB, if not -> adds it
 const insertNewFile = (data, connection, callback) => {
   connection.execute('SELECT AID FROM Artist WHERE Name LIKE ? LIMIT 1',[data.artist],(err,results) =>{
     if (results.length) { //if artist exist in database
@@ -26,6 +27,7 @@ const insertNewFile = (data, connection, callback) => {
   });
 };
 
+//insert in Song table info about song, if not existing
 const insertToSong = (data,connection, call) => {
   connection.execute('SELECT SID FROM Song WHERE Name = ? AND AID = ?',[data.title,data.id], (err, result) =>{
     if (!result.length) {
@@ -39,7 +41,14 @@ const insertToSong = (data,connection, call) => {
   });
 };
 
+const apiCall = (connection, id) => {
+  connection.execute('select * from Category where ?',id, (err, result) => {
+    //return result;
+  });
+};
+
 module.exports = {
   connect: connect,
   insert: insertNewFile,
+  apiCall: apiCall,
 };
