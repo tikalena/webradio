@@ -16,7 +16,7 @@ DB_PASS = DB USER PASSWORD
 PORT    = PORT OF APPLICATION
 ```
 
-#API
+# API
 
 ```
 http://server/api/cat
