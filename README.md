@@ -1,6 +1,10 @@
 A new school project of webradio using Node JS and CentOS
 
-Run npm install in "backend"-directory and create file ".env" in the same directory with 
+Run 
+```
+npm install
+```
+in the **backend** directory, then create **.env** file in the same directory with the follow code inside:
 
 ```
 DB_HOST = HOST IP
