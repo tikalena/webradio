@@ -196,11 +196,14 @@ span.psw {
 #profile{
 box-sizing: border-box;
 border: 5px double cornflowerblue;
-float: left;
 height: 400px;
 width: 400px;
+float: right;
+margin-top: 5%;
 display: none;
-margin-left: 35%;
 overflow: scroll;
 }
 
+.profile_btn{
+width: 7%;
+}
