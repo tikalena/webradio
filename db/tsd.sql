@@ -152,8 +152,8 @@ CREATE TABLE IF NOT EXISTS `User` (
 --
 
 INSERT INTO `User` (`UID`, `Login`, `Password`, `Name`) VALUES
-(1, 'tsd', 'tsdtsd', 'Dmitri'),
-(2, 'arttu', 'arttu', 'Arttu');
+(1, 'tsd', '$2b$10$sES3Jz9sqnFTpWNA5lVaC.eNb4S0siaClGZ/vaGE6TkmJRyEQZdSy', 'Dmitri'),
+(2, 'arttu', '$2b$10$Pmy4w.kNl5/lw8XSX5uM7exKBIxy151WPgGQpRlpFJFQPGcQUqTYG', 'Arttu');
 
 --
 -- Indexes for dumped tables
