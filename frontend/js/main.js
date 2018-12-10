@@ -1,3 +1,44 @@
+//change fa-fa//
+function changeColor(){
+  document.getElementById('like').style.color='red';
+}
+
+//show profile//
+function showProfile(){
+  var x = document.getElementById("profile");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+
+
+/*validate form
+var attempt = 3;
+function validateForm(){
+  var username = document.getElementById('username').value;
+  var password = document.getElementById('password').value;
+
+  if(username == 'alena' && password == '12345'){
+    alert("Welcome");
+    document.getElementById('login').style.display = 'none';
+    return false;
+  }
+else{
+    attempt --;
+    alert("You have left " + attempt+ "attempt");
+
+    if (attempt == 0){
+      document.getElementById('name').disabled = true;
+      document.getElementById('psw').disabled = true;
+      document.getElementById('btn').disabled = true;
+      return false;
+    }
+  }
+}
+*/
+
 // Get the modal
 var modal = document.getElementById('forma');
 
@@ -19,7 +60,7 @@ var path = require('path');
 
 app.use(bodyParser.json());
 
-var port = 63342;
+var port = 8000;
 
 var users = [
   {username: 'admin', password: '12345'}
@@ -56,7 +97,7 @@ app.post('/login', function(req,res) {
     res.send('Login succesful: ' + ' sessionID: ' + req.session.id + '; user: ' + req.session.username );
   }
   else{
-    console.log('Login failed: ', req.body.username)
+    console.log('Login failed: ', req.body.username);
     res.status(401).send('Login error');
   }
 });

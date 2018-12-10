@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Lounge_radio</title>
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script>
       window.onload = function (){
@@ -28,6 +29,7 @@
         })
       }
     </script>
+
 </head>
 <body>
 
@@ -38,18 +40,18 @@
     <input type='checkbox' id='form-switch'>
     <div id="id01">
 
-        <form class="modal-content animate" action="/action_page.php">
+        <form class="modal-content animate">
 
 
             <div class="container">
 
-                <label for="uname"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="uname" required>
+                <label><b>Username</b></label>
+                <input id="username" type="text" placeholder="Enter Username" name="username" required>
 
-                <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
+                <label><b>Password</b></label>
+                <input id="password" type="password" placeholder="Enter Password" name="password" required>
 
-                <button type="submit" id="btn">Login</button>
+                <button type="submit" id="btn" onclick="validateForm()">Login</button>
                 <label>
                     <input type="checkbox" checked="checked" name="remember"> Remember me
                 </label>
@@ -63,7 +65,7 @@
     </div>
 
     <div id="id02">
-        <form class="modal-content animate" action="/action_page.php">
+        <form class="modal-content animate">
 
             <div class="container">
             <h1>Like..listen..enjoy and register</h1>
@@ -89,12 +91,23 @@
 
 </div>
 
-
 <div class="playpause">
     <input type="checkbox" value="None" id="playpause" name="check" />
     <label for="playpause" tabindex=1></label>
 </div>
 
+<div class="like_content">
+    <span> Did you like this song? Press like to listen liked song often and save it to your profile</span>
+    <button class="like_btn" onclick="changeColor()">
+        <i id="like" class="fa fa-heart-o"></i> Like
+    </button>
+    <button class="profile_btn" onclick="showProfile()">
+<div id="profile">
+
+    Profile
+</button>
+</div>
+</div>
 <script src="js/main.js"></script>
 <script src="js/session_handler.js"></script>
 </body>
