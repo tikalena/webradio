@@ -84,13 +84,14 @@
 <img id ="imageOne" src ="images/Play_on.png" onclick = "changeImage()"/>
 
 <script>
-  var image =  document.getElementById("imageOne");
+  let image =  document.getElementById("imageOne");
 
   function changeImage()
   {
     if (image.getAttribute('src') === "images/Play_off.png")
     {
       image.src = "images/Play_on.png";
+
     }
     else
     {
@@ -100,7 +101,7 @@
 </script>
 
 <div id="like_content">
-    <span> Did you like this song? Press like to impact on radio content and save song information on your profile</span>
+    <p> Did you like this song? Press like to impact on radio content and save song information on your profile</p>
     <button class="like_btn" onclick="changeColor()">
         <i id="like" class="fa fa-heart-o"></i> Like
     </button>
