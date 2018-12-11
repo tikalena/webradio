@@ -36,7 +36,8 @@ app.use(session({
 }));
 
 passport.serializeUser((user,done) => {
-  console.log('serialize: '+user);
+  console.log('serialize: ');
+  console.log(user);
   done(null, user);
 });
 
@@ -49,43 +50,28 @@ passport.use(new LocalStrategy({
   //fields in HTML form
   usernameField: 'user',
   passwordField: 'pass'
-    },
-    (username, password, done) => {
-      console.log('Here we go: ' + username);
-
+    }, (username, password, done) => {
       const doLogin = (username, password) => {
         return new Promise((resolve, reject) => {
           db.login([username], connection, (result) => {
-            console.log(result);
-            console.log(result[0].Password);
-            if (password === result[0].Password) {
-              resolve(result);
-            }
-            else {
-              reject(err);
-            }
-            /* Use this to check encrypted password
+            /* Use this to check encrypted password*/
             bcrypt.compare(password, result[0].Password, (err, res) => {
-              if (res) {
-                resolve(result);
-              } else {
-                reject(err);
-              }
-            });*/
-
+              res ? resolve(result) : reject(err)
+            });
           });
         });
       };
 
-      return doLogin(username, password).then((result) => {
+      return doLogin(username, password)
+      .then((result) => {
         if (result.length < 1) {
-          console.log('undone');
           return done(null, false);
         } else {
-          console.log('done');
-          result[0].passwd = ''; // remove password from user's data
+          delete  result[0].Password; // remove password from user's data
           return done(null, result[0]); // result[0] is user's data, accessible as req.user
         }
+      }).catch(error => {
+        return done(null, error);
       });
     },
 ));
@@ -98,25 +84,42 @@ app.use(express.static('pub'));
 
 // render /login
 app.post('/login', (req, res, next) =>{
-  passport.authenticate('local', (err, user, info) =>{
-    console.log(user);
-    console.log(info);
+  passport.authenticate('local', (err, user) =>{
     if (err) {
       return next(err);
     }
     if (!user) { // if login not happening
-      return res.redirect('/node/login.html');
+      return res.json({
+        "code":204,
+        "success":"something is wrong. Codeline 101 in index.js"
+      });
     }
     req.logIn(user, function(err) {
       // send userID as cookie:
-      res.cookie('userID', req.user.uID);
+      res.cookie('userID', req.user.UID);
       if (err) {
         return next(err);
       }
-      return res.redirect('/node/front.html'); // if login successful
+      return res.json({
+        "code":200,
+        "success":"login sucessfull"
+      }); // if login successful
     });
   })(req, res, next);
 });
+
+app.get('/logout', (req, res) =>{
+  req.logout();
+  let dod = req.session.destroy(err =>{
+    console.log(dod);
+  });
+  res.sendStatus(401);
+  /*res.json({
+    "code":200,
+    "success":"logged out"
+  });*/
+});
+
 // render /upload
 app.post('/upload', upload.array('mp3'), (req, res, next) => {
 
