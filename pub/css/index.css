@@ -133,6 +133,7 @@ span.psw {
     border-top: 10px dashed #eee;
     text-align: center;
     display: none;
+    float: bottom;
 }
 
 .like_btn {
@@ -148,9 +149,10 @@ span.psw {
     font-family: monospace;
     font-size: 100%;
 }
-.like_content span {
+p {
     color: #9d9da4;
     font-family: monospace;
+    text-align: center;
 }
 
 /*profile content */

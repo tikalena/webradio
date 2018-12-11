@@ -15,6 +15,11 @@ h1{
     font-family: monospace;
  }
 
+
+li{
+    list-style-type: none;
+}
+
 div.box {
     box-sizing: border-box;
     width: 50%;
@@ -27,10 +32,11 @@ div.box {
     box-sizing: border-box;
     border: 5px double cornflowerblue;
     float: left;
-    height: 400px;
-    width: 400px;
-    margin-left: 35%;
+    height: 73%;
+    width: 55%;
+    margin-left: 45%;
     overflow: scroll;
+    position: relative;
 }
 
 
@@ -39,9 +45,7 @@ div.box {
     background-color: lightslategrey;
     color: white;
     padding: 10px;
-
     margin-left: 10px;
-
     border: none;
     cursor: pointer;
     width: 20%;
@@ -114,6 +118,7 @@ div.box {
 }
 
 
+
 /* modal */
 .popup {
     top: -100%;
@@ -165,19 +170,30 @@ div.box {
     width: 100%;
 }
 
-button, input {
+input{
     background-color: lightslategrey;
     color: white;
-    padding: 10px;
+    padding: 20px;
+    margin-left: 10px;
+    width: 13%;
+    border-radius: 8px;
+}
+
+
+button {
+    background-color: lightslategrey;
+    color: white;
+    padding: 20px;
     margin-left: 10px;
     border: none;
     cursor: pointer;
-    width: 30%;
+    width: 15%;
     float: left;
     border-radius: 8px;
-
+    text-align: center;
     font-family: monospace;
     font-size: 20px;
+    margin-top: 20px;
 }
 
 button:hover {

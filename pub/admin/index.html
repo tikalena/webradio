@@ -35,7 +35,6 @@
         <div id="category">
             <input type="text" id="searchInput" onkeyup="searchFiles()" placeholder="Enter name.." title="Type in a name">
             <ul id="music"></ul>
-
         </div>
 
         <a href="#x" class="overlay" id="win"></a>
@@ -97,10 +96,10 @@
     </div>
 
 </div>
-    <form action="/upload" method="post" enctype="multipart/form-data" id="mp3file">
-        <input type="file" multiple name="mp3" accept="audio/*">
+    <form action="/upload" method="post" enctype="multipart/form-data" >
+        <input type="file" id="mp3file" multiple name="mp3" accept="audio/*">
         <br />
-        <button type="submit">Send mp3</button>
+        <button id="send" type="submit">Send mp3</button>
     </form>
     <script src="js/admin.js"></script>
     <script src="js/jsons.js"></script>

@@ -17,10 +17,12 @@ const showCats = (data) => { //show category buttons in interface
   let buttons = document.getElementById('catButton');
   for (let i=0;i<data.length;i++) {
     let button = document.createElement('button'),
-    li = document.createElement('li');
+    li = document.createElement('li'),
+    ul = document.createElement('ul');
     button.innerText = data[i].Name;
     button.setAttribute("onclick","showFileList("+data[i].CID+")");
     li.appendChild(button);
+    ul.appendChild(li);
     buttons.appendChild(li);
   }
 };
