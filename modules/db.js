@@ -57,6 +57,10 @@ const apiCall = (connection, data, callback) => {
     }
   }
 
+  else if (what === 'cursong') {
+    sql = 'select Song.SID, Song.Name as Title, Song.Filename as File, Artist.Name as Artist, Artist.AID from ((Playlist inner join Song on Playlist.SID = Song.SID) inner join Artist on Song.AID = Artist.AID) where Playlist.Played is NULL and Playlist.Date = DATE(NOW()) order by Playlist.Sequence limit 1';
+  }
+
   else if (what==='song') {
     if (id) {
       sql = 'select * from Song where SID = ?';
