@@ -4,6 +4,10 @@ body{
 
 }
 
+#pplayer {
+    display: none;
+}
+
 h4{
      margin-left: 10%;
  }
@@ -187,7 +191,6 @@ list-style-type:none;
 
 /*play button*/
 #imageOne {
-    display: block;
     margin-left: 47%;
     position: relative;
     display: flex;
