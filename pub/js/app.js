@@ -17,6 +17,47 @@ function id01(event){
   })
 
   .then((res) => res.json())
-  .then((json) =>  console.log(json))
-  .catch((err) => console.log(err))
+  .then(function(json){Login(json);})
+  .catch(function(error){error_div(error);});
 }
+
+function Login(content) {
+    let like = document.getElementById("like_content");
+    if (like.style.display === "block") {
+      like.style.display = "none";
+    } else {
+      like.style.display = "block";
+    }
+
+  let logged = document.getElementById("forma");
+  if (logged.style.display === "none") {
+    logged.style.display = "block";
+  } else {
+    logged.style.display = "none";
+  }
+
+  let log_btn = document.getElementById("login_btn");
+  if (log_btn.style.display === "none") {
+    log_btn.style.display = "block";
+  } else {
+    log_btn.style.display = "none";
+  }
+
+  let prof_btn = document.getElementById("profile_content");
+  if (prof_btn.style.display === "block") {
+    prof_btn.style.display = "none";
+  } else {
+    prof_btn.style.display = "block";
+  }
+}
+
+function error_div(){
+  let error = document.getElementById("error");
+  if (error.style.display === "block") {
+    error.style.display = "none";
+  } else {
+    error.style.display = "block";
+  }
+}
+
+
