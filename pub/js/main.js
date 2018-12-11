@@ -2,10 +2,15 @@
 function changeColor(){
   document.getElementById('like').style.color='red';
 
-  let li = document.createElement('li');
-  let song = document.createTextNode("Song...");
-  li.appendChild(song);
-  document.getElementById('profile').appendChild(li);
+  let song = document.createElement("AUDIO");
+
+  if (song.canPlayType("audio/mpeg")) {
+    song.setAttribute("src",".mp3");
+  } else {
+    song.setAttribute("src",".ogg");
+  }
+  song.setAttribute("controls", "controls");
+  document.getElementById('profile').appendChild(song);
 }
 
 //show profile//
