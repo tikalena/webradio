@@ -1,12 +1,3 @@
-function myFunction() {
-  var x = document.getElementById("category");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
-}
-
 /* slide */
 
 var slideIndex = 1;
@@ -33,9 +24,9 @@ function showSlides(n) {
 }
 
 /* Search */
-function mySearch() {
+function searchFiles() {
   var input, filter, ul, li, a, i, txtValue;
-  input = document.getElementById("myInput");
+  input = document.getElementById("searchInput");
   filter = input.value.toUpperCase();
   ul = document.getElementById("music");
   li = ul.getElementsByTagName("li");

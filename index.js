@@ -5,6 +5,7 @@ const
     connection    = db.connect(),
 
     express       = require('express'),
+    cors          = require('cors'),
     app           = express(),
     port          = process.env.PORT || 8000, //either PORT from .env or 8000
 
@@ -27,6 +28,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 app.use(cookie());
+app.use(cors());
 
 app.use(session({
   secret: 'WebRadioSession',

@@ -68,7 +68,7 @@ const apiCall = (connection, data, callback) => {
   }
 
   else if (what==='songs') {
-    sql = 'select * from Song where CID = ?';
+    sql = 'select Song.SID, Song.Duration, Song.Filename, Song.Name as Title, Artist.Name as Artist  from Song, Artist where Song.AID = Artist.AID and CID = ?';
     insert = [id];
   }
 
