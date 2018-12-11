@@ -9,6 +9,11 @@
 </head>
 <body>
 
+<button class="profile_btn" onclick="showProfile()">Profile</button>
+<div id="profile">
+    Profile
+</div>
+
 
 <button onclick="document.getElementById('forma').style.display='block'" style="width:auto;">Login</button>
 
@@ -27,7 +32,8 @@
                 <label><b>Password</b></label>
                 <input id="password" type="password" placeholder="Enter Password" name="password" required>
 
-                <input type="submit" value="SEND POST" >Login</input>
+                <input id= "login" type="submit" value="Login">
+
                 <label>
                     <input type="checkbox" checked="checked" name="remember"> Remember me
                 </label>
@@ -69,19 +75,18 @@
 
 <div class="playpause">
     <input type="checkbox" value="None" id="playpause" name="check" />
-    <label for="playpause" tabindex=1></label>
+    <label for="playpause"></label>
 </div>
+
 
 <div class="like_content">
     <span> Did you like this song? Press like to impact on radio content and save song's information on your profile</span>
     <button class="like_btn" onclick="changeColor()">
         <i id="like" class="fa fa-heart-o"></i> Like
     </button>
-    <button class="profile_btn" onclick="showProfile()">Profile</button>
-<div id="profile">
-    Profile
 </div>
-</div>
+
+
 
 <script src="js/app.js"></script>
 

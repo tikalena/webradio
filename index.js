@@ -54,7 +54,9 @@ passport.deserializeUser((user, done) => {
 },*/
 
 passport.use(new LocalStrategy((username, password, done) => {
-      const doLogin = (username, password) => {
+  console.log(username);
+  console.log(password);
+  const doLogin = (username, password) => {
         return new Promise((resolve, reject) => {
           db.login([username], connection, (result) => {
             /* Use this to check encrypted password*/

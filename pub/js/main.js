@@ -1,6 +1,10 @@
 //change fa-fa//
 function changeColor(){
   document.getElementById('like').style.color='red';
+  var li = document.createElement('li');
+  var song = document.
+  li.appendChild(song);
+  document.body.appendChild(song)
 }
 
 //show profile//

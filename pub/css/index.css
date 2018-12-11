@@ -37,20 +37,17 @@ h4{
     cursor: pointer;
     border-style: double;
     border-width: 0px 0 0px 60px;
-    margin-top: 10%;
+    margin-top: 15%;
     margin-left: 50%;
-
 }
-.playpause input[type="checkbox"] {
-    margin: 2% 43%;
+input[type="checkbox"] {
+    visibility: hidden;
 }
-.playpause input[type="checkbox"]:checked + label {
+input[type="checkbox"]:checked + label {
     border-style: solid;
     border-width: 37px 0 37px 60px;
 }
-.playpause input[type="checkbox"]:focus + label {
-    box-shadow: 0 0 10px slategray;
-}
+
 /*modal*/
 /* Full-width input fields */
 input[type=text], input[type=password], input[type=email] {
@@ -64,23 +61,24 @@ input[type=text], input[type=password], input[type=email] {
 }
 
 /* Set a style for all buttons */
-button {
+button, #login{
     background-color: lightslategrey;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 100%;
+    width: 30%;
     float: right;
     border-radius: 8px;
     font-family: monospace;
     font-size: 20px;
 }
 
-button:hover {
+button:hover, #login:hover {
     background: cornflowerblue;;
 }
+
 
 /* Extra styles for the button */
 .cancelbtn {
@@ -167,7 +165,7 @@ span.psw {
 /*Like*/
 
 .like_content {
-    margin: 40px 0 0;
+    margin: 40px 80px 0;
     padding: 40px 0 0;
     font-size: 18px;
     border-top: 10px dashed #eee;
@@ -179,13 +177,14 @@ span.psw {
     background-color: lightslategrey;
     color: white;
     padding: 10px 20px;
-    margin: 5% 45%;
+    margin-top: 2%;
+    margin-right: 44%;
     border: none;
     cursor: pointer;
-    width: 7%;
+    width: 9%;
     border-radius: 8px;
     font-family: monospace;
-    font-size: 20px;
+    font-size: 100%;
 }
 .like_content span {
     color: #9d9da4;
@@ -205,5 +204,12 @@ overflow: scroll;
 }
 
 .profile_btn{
-width: 7%;
+width: 10%;
+float: right;
+font-size: 125%;
+text-align: center;
+margin-top: 1%;
+display: none;
+
 }
+
