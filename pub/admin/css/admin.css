@@ -181,6 +181,8 @@ button:hover {
 /* Slideshow container */
 #list, #list2{
     margin-top: 10%;
+    list-style-type:none;
+
 }
 
 .slideshow-container {

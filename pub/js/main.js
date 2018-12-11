@@ -1,15 +1,16 @@
 //change fa-fa//
 function changeColor(){
   document.getElementById('like').style.color='red';
-  var li = document.createElement('li');
-  var song = document.
+
+  let li = document.createElement('li');
+  let song = document.createTextNode("Song...");
   li.appendChild(song);
-  document.body.appendChild(song)
+  document.getElementById('profile').appendChild(li);
 }
 
 //show profile//
 function showProfile(){
-  var x = document.getElementById("profile");
+  let x = document.getElementById("profile");
   if (x.style.display === "block") {
     x.style.display = "none";
   } else {
@@ -17,9 +18,16 @@ function showProfile(){
   }
 }
 
-function validateForm() {
+// Get the modal
+var modal = document.getElementById('forma');
 
-}
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
+
 
 /*validate form
 var attempt = 3;
@@ -46,17 +54,8 @@ else{
 }
 */
 
-// Get the modal
-var modal = document.getElementById('forma');
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
-
-
+/*
 var express = require('express');
 var app = express();
 
@@ -122,3 +121,4 @@ app.listen(port, function(){
   console.log('app running on port' + port);
 });
 
+*/

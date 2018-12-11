@@ -6,11 +6,19 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+
 </head>
 <body>
 
+<div id="profile_content">
+    <button class="profile_btn" onclick="showProfile()">Profile</button>
+    <div id="profile">
+        <h2>My radio</h2>
+    </div>
+</div>
 
-<button onclick="document.getElementById('forma').style.display='block'" style="width:auto;">Login</button>
+<button id="login_btn" onclick="document.getElementById('forma').style.display='block'" style="width:auto;">Login</button>
+
 
 <div id="forma" class="modal">
     <input type='checkbox' id='form-switch'>
@@ -27,15 +35,19 @@
                 <label><b>Password</b></label>
                 <input id="password" type="password" placeholder="Enter Password" name="password" required>
 
-                <button type="submit">SEND POST</button>
+                <button type="submit">Sign in</button>
+
                 <label>
                     <input type="checkbox" checked="checked" name="remember"> Remember me
                 </label>
 
-                <label for='form-switch'><h4>Be an active listener. Register <u>HERE</u></h4></label>
+                <label for='form-switch'><h4>Be an active listener. <br> Register <u>HERE</u></h4></label>
+
+                <div id="error">Wrong password/username. Please try again.</div>
 
                 <button type="button" onclick="document.getElementById('forma').style.display='none'" class="cancelbtn">Cancel</button>
             </div>
+
 
         </form>
     </div>
@@ -57,9 +69,11 @@
                 <label><b>Re Password</b></label>
                 <input type="password" placeholder="Re Password" required>
 
-                <button type='submit'>Register</button>
-                <label for='form-switch'>Already Member ? <u>Sign In Now..</u></label>
 
+                <label for='form-switch'>Already Member ? <u>Sign In Now..</u></label>
+                <br>
+
+                <button type='submit'>Register</button>
                 <button type="button" onclick="document.getElementById('forma').style.display='none'" class="cancelbtn">Cancel</button>
             </div>
         </form>
@@ -67,22 +81,33 @@
 
 </div>
 
-<div class="playpause">
-    <input type="checkbox" value="None" id="playpause" name="check" />
-    <label for="playpause" tabindex=1></label>
-</div>
+<img id ="imageOne" src ="images/Play_on.png" onclick = "changeImage()"/>
 
-<div class="like_content">
+<script>
+  var image =  document.getElementById("imageOne");
+
+  function changeImage()
+  {
+    if (image.getAttribute('src') === "images/Play_off.png")
+    {
+      image.src = "images/Play_on.png";
+    }
+    else
+    {
+      image.src = "images/Play_off.png";
+    }
+  }
+</script>
+
+<div id="like_content">
     <span> Did you like this song? Press like to impact on radio content and save song's information on your profile</span>
     <button class="like_btn" onclick="changeColor()">
         <i id="like" class="fa fa-heart-o"></i> Like
     </button>
-    <button class="profile_btn" onclick="showProfile()">Profile</button>
-<div id="profile">
-    Profile
-</div>
+
 </div>
 
+<script src="js/main.js"></script>
 <script src="js/app.js"></script>
 
 </body>
