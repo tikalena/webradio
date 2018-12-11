@@ -10,9 +10,13 @@ function id01(event){
 
   fetch('http://localhost:8000/login', {
     method: 'POST',
-    headers : new Headers(),
-    body:JSON.stringify({username:username, password:password})
-  }).then((res) => res.json())
-.then((data) =>  console.log(data))
-.catch((err)=>console.log(err))
+    body: new URLSearchParams({username:username, password:password}),
+    headers: new Headers({
+      'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8'
+    })
+  })
+
+  .then((res) => res.json())
+  .then((json) =>  console.log(json))
+  .catch((err) => console.log(err))
 }
