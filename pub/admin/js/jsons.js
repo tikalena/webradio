@@ -9,10 +9,12 @@ fetch('http://localhost:8000/api/cat')
 const showCats = (data) => { //show category buttons in interface
   let buttons = document.getElementById('catButton');
   for (let i=0;i<data.length;i++) {
-    let button = document.createElement('button');
+    let button = document.createElement('button'),
+    li = document.createElement('li');
     button.innerText = data[i].Name;
     button.setAttribute("onclick","showFileList("+data[i].CID+")");
-    buttons.appendChild(button);
+    li.appendChild(button);
+    buttons.appendChild(li);
   }
 
 };

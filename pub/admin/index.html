@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <title>Admin page</title>
     <link rel="stylesheet" href="css/admin.css">
-
 </head>
+
 <body>
 <div class="container" >
 
-    //Modal window goes here
+    <!-- Modal div -->
     <div id="fileInfo" class="modal">
         <!-- Modal content -->
         <div class="modal-content">
@@ -25,70 +25,67 @@
             <input type="text" id="searchInput" onkeyup="searchFiles()" placeholder="Enter name.." title="Type in a name">
             <ul id="music"></ul>
 
-
-            <a href="#x" class="overlay" id="win"></a>
-            <div class="popup">
-                <h1>Adele</h1>
-                <img src="img/adele.jpg" alt="" height="250" width="300" class="center"/>
-                <p>Duration 3:05</p>
-            </div>
-
         </div>
 
-        <div id="playlist" class="box">
-            <h1>Playlist</h1>
+        <a href="#x" class="overlay" id="win"></a>
+        <div class="popup">
+            <h1>Adele</h1>
+            <img src="img/adele.jpg" alt="" height="250" width="300" class="center"/>
+            <p>Duration 3:05</p>
+        </div>
 
-            <div class="slideshow-container">
+    </div>
 
-                <div class="mySlides fade">
-                    <div class="numbertext">1 / 2</div>
-                    <div class="text">Data</div>
-                    <ul id="list">
-                        <li>
-                            <audio controls>
-                                <source src="../files/02.%20William%20Orbit%20(Strange%20Cargo)%20-%20The%20Story%20Of%20Light.mp3" type="audio/mpeg">
-                            </audio>
-                        </li>
-                        <li>
-                            <audio controls>
-                                <source src="../files/02.%20William%20Orbit%20(Strange%20Cargo)%20-%20The%20Story%20Of%20Light.mp3" type="audio/mpeg">
-                            </audio>
-                        </li>
-                    </ul>
+    <div id="playlist" class="box">
+        <h1>Playlist</h1>
 
-                </div>
+        <div class="slideshow-container">
 
-                <div class="mySlides fade">
-                    <div class="numbertext">2 / 2</div>
-                    <div class="text">Data</div>
-
-                    <ul id="list2">
-                        <li>
-                            <audio controls>
-                                <source src="../files/02.%20William%20Orbit%20(Strange%20Cargo)%20-%20The%20Story%20Of%20Light.mp3" type="audio/mpeg">
-                            </audio>
-                        </li>
-                        <li>
-                            <audio controls>
-                                <source src="../files/02.%20William%20Orbit%20(Strange%20Cargo)%20-%20The%20Story%20Of%20Light.mp3" type="audio/mpeg">
-                            </audio>
-                        </li>
-                    </ul>
-
-                </div>
-
-
-
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 2</div>
+                <div class="text">Data</div>
+                <ul id="list">
+                    <li>
+                        <audio controls>
+                            <source src="../files/02.%20William%20Orbit%20(Strange%20Cargo)%20-%20The%20Story%20Of%20Light.mp3" type="audio/mpeg">
+                        </audio>
+                    </li>
+                    <li>
+                        <audio controls>
+                            <source src="../files/02.%20William%20Orbit%20(Strange%20Cargo)%20-%20The%20Story%20Of%20Light.mp3" type="audio/mpeg">
+                        </audio>
+                    </li>
+                </ul>
 
             </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 2</div>
+                <div class="text">Data</div>
+
+                <ul id="list2">
+                    <li>
+                        <audio controls>
+                            <source src="../files/02.%20William%20Orbit%20(Strange%20Cargo)%20-%20The%20Story%20Of%20Light.mp3" type="audio/mpeg">
+                        </audio>
+                    </li>
+                    <li>
+                        <audio controls>
+                            <source src="../files/02.%20William%20Orbit%20(Strange%20Cargo)%20-%20The%20Story%20Of%20Light.mp3" type="audio/mpeg">
+                        </audio>
+                    </li>
+                </ul>
+
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
         </div>
 
     </div>
 
-
+</div>
     <form action="/upload" method="post" enctype="multipart/form-data" id="mp3file">
         <input type="file" multiple name="mp3" accept="audio/*">
         <br />
@@ -96,6 +93,5 @@
     </form>
     <script src="js/admin.js"></script>
     <script src="js/jsons.js"></script>
-</div>
 </body>
 </html>
