@@ -46,11 +46,14 @@ passport.deserializeUser((user, done) => {
   done(null, user);
 });
 
-passport.use(new LocalStrategy({
+/* Just tot save this code
+{
   //fields in HTML form
-  usernameField: 'user',
-  passwordField: 'pass'
-    }, (username, password, done) => {
+  usernameField: 'username',
+      passwordField: 'password'
+},*/
+
+passport.use(new LocalStrategy((username, password, done) => {
       const doLogin = (username, password) => {
         return new Promise((resolve, reject) => {
           db.login([username], connection, (result) => {
