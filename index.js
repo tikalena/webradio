@@ -36,8 +36,8 @@ app.use(session({
 }));
 
 passport.serializeUser((user,done) => {
-  console.log('serialize: ');
-  console.log(user);
+  //console.log('serialize: ');
+  //console.log(user);
   done(null, user);
 });
 
@@ -46,7 +46,7 @@ passport.deserializeUser((user, done) => {
   done(null, user);
 });
 
-/* Just tot save this code
+/* Just to save this code
 {
   //fields in HTML form
   usernameField: 'username',
@@ -54,11 +54,12 @@ passport.deserializeUser((user, done) => {
 },*/
 
 passport.use(new LocalStrategy((username, password, done) => {
+  console.log('passport use');
+  console.log(username);
       const doLogin = (username, password) => {
         return new Promise((resolve, reject) => {
           db.login([username], connection, (result) => {
-            /* Use this to check encrypted password*/
-            bcrypt.compare(password, result[0].Password, (err, res) => {
+            bcrypt.compare(password, result[0].Password, (err, res) => { // Use this to check encrypted password
               res ? resolve(result) : reject(err)
             });
           });
@@ -69,11 +70,13 @@ passport.use(new LocalStrategy((username, password, done) => {
       .then((result) => {
         if (result.length < 1) {
           return done(null, false);
-        } else {
+        }
+        else {
           delete  result[0].Password; // remove password from user's data
           return done(null, result[0]); // result[0] is user's data, accessible as req.user
         }
-      }).catch(error => {
+      })
+      .catch(error => {
         return done(null, error);
       });
     },
@@ -82,7 +85,7 @@ passport.use(new LocalStrategy((username, password, done) => {
 app.use(passport.initialize());
 app.use(passport.session());
 
-//app.set('view engine', 'ejs');
+app.set('view engine', 'ejs');
 app.use(express.static('pub'));
 
 // render /login
@@ -94,7 +97,7 @@ app.post('/login', (req, res, next) =>{
     if (!user) { // if login not happening
       return res.json({
         "code":204,
-        "success":"something is wrong. Codeline 101 in index.js"
+        "success":"something is wrong. Code in index.js"
       });
     }
     req.logIn(user, function(err) {
@@ -125,7 +128,6 @@ app.get('/logout', (req, res) =>{
 
 // render /upload
 app.post('/upload', upload.array('mp3'), (req, res, next) => {
-
   req.files.forEach((file) =>{
     const
         uploadFile    = file.destination+file.filename,
