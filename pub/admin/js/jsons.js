@@ -59,7 +59,9 @@ const showFileList = (id) => { //show songs in category
 const showModalFile = (id) => { //show single file data
   let modal = document.getElementById('fileInfo'),
       span = document.getElementById('close'),
-      content = document.getElementById('inContent'),
+      artistField = document.getElementById('artist'),
+      titleField = document.getElementById('title'),
+      songid = document.getElementById('songID'),
   jsonArtist =[];
 
   span.onclick = () => {modal.style.display = "none";};
@@ -76,7 +78,9 @@ const showModalFile = (id) => { //show single file data
   .then(response => response.json())
   .then(data => {
 
-    content.innerText = data[0].Name;
+    artistField.value = data[0].Title;
+    titleField.value = data[0].Artist;
+    songid.value = data[0].SID;
 
   })
   .catch(error => console.error(error));
