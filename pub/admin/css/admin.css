@@ -70,6 +70,24 @@ div.box {
 
 /*Modal*/
 
+#inContent{
+    font-family: monospace;
+    font-size: 23px;
+    text-align: center;
+}
+
+#artist{
+    width: 200px;
+    background-color: ghostwhite;
+    color: black;
+}
+#title{
+    width: 200px;
+    background-color: ghostwhite;
+    color: black;
+    margin-top: 20px;
+}
+
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
