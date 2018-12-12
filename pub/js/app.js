@@ -1,5 +1,29 @@
 'use strict';
 
+let source = document.getElementById('playerSource'),
+    player = document.getElementById('player');
+source.src = "../files/07. Georges Bizet - Carmen.mp3";
+player.load();
+player.controls = false;
+
+function changeImage()
+{
+  let image =  document.getElementById("imageOne"),
+  player = document.getElementById('player');
+
+  if (image.getAttribute('src') === "images/Play_off.png")
+  {
+    image.src = "images/Play_on.png";
+    player.muted = true;
+  }
+  else
+  {
+    if (player.paused) {player.play();}
+    image.src = "images/Play_off.png";
+    player.muted = false;
+  }
+}
+
 document.getElementById('id01').addEventListener('submit', id01);
 
 function id01(event){

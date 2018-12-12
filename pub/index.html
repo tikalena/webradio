@@ -81,27 +81,13 @@
 
 </div>
 
-<img id ="imageOne" src ="images/Play_on.png" onclick = "changeImage()"/>
-
-<script>
-  let image =  document.getElementById("imageOne");
-
-  function changeImage()
-  {
-    if (image.getAttribute('src') === "images/Play_off.png")
-    {
-      image.src = "images/Play_on.png";
-
-    }
-    else
-    {
-      image.src = "images/Play_off.png";
-    }
-  }
-</script>
+<img id ="imageOne" src ="./images/Play_on.png" onclick = "changeImage()" alt="Press me to play"/>
+<audio controls="" id="player">
+    <source src="" type="audio/mpeg" id="playerSource">
+</audio>
 
 <div id="like_content">
-    <p> Did you like this song? Press like to impact on radio content and save song information on your profile</p>
+    <p> Did you like this song? Press like to impact on radio content and save song information in your profile</p>
     <button class="like_btn" onclick="changeColor()">
         <i id="like" class="fa fa-heart-o"></i> Like
     </button>
