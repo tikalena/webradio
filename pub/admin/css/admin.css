@@ -1,9 +1,11 @@
 body{
     background-color: whitesmoke;
 }
+
 #forma{
     display: none;
 }
+
 .center {
     display: block;
     margin-left: auto;
@@ -15,11 +17,10 @@ h1{
     font-family: monospace;
  }
 
-
 li{
     list-style-type: none;
 }
-
+/* boxit*/
 div.box {
     box-sizing: border-box;
     width: 25%;
@@ -27,49 +28,12 @@ div.box {
     float: left;
     height: 600px;
 }
-/* boxit*/
 
 #database{
     width: 200px;
 }
-/*
-#category{
-    box-sizing: border-box;
-    border: 5px double cornflowerblue;
-    float: left;
-    height: 73%;
-    width: 55%;
-    margin-left: 45%;
-    overflow: scroll;
-    position: relative;
-}
-
-/*
-
- */
-/* modal button*/
-.button, .button2, .button3 {
-    background-color: lightslategrey;
-    color: white;
-    padding: 10px;
-    margin-left: 10px;
-    border: none;
-    cursor: pointer;
-    width: 20%;
-
-    border-radius: 8px;
-    font-family: monospace;
-    font-size: 20px;
-}
-
-.button:hover, .button2:hover, .button3:hover {
-    background: cornflowerblue;
-}
-
-
 
 /*Modal*/
-
 #inContent{
     font-family: monospace;
     font-size: 23px;
@@ -122,78 +86,6 @@ div.box {
     color: #000;
     text-decoration: none;
     cursor: pointer;
-}
-
-/* ovarlay */
-.overlay {
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 10;
-    display: none;
-    /* фон затемнения */
-    background-color: rgba(0, 0, 0, 0.65);
-    position: fixed; /* фиксированное поцизионирование */
-    cursor: default; /* тип курсара */
-}
-/* активируем слой затемнения */
-.overlay:target {
-    display: block;
-}
-
-
-
-/* modal */
-.popup {
-    top: -100%;
-    right: 0;
-    left: 50%;
-    font-size: 14px;
-    z-index: 20;
-    margin: 0;
-    width: 85%;
-    min-width: 320px;
-    max-width: 600px;
-    /* scroll */
-    position: fixed;
-    padding: 15px;
-    border: 5px solid #383838;
-    background: cornflowerblue;
-
-    /* radius */
-    -webkit-border-radius: 8px;
-    border-radius: 8px;
-
-    /* shadow */
-    -webkit-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
-    box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
-    -webkit-transform: translate(-50%, -500%);
-    transform: translate(-50%, -500%);
-    -webkit-transition: -webkit-transform 0.6s ease-out;
-    transition: transform 0.6s ease-out;
-}
-/* modal */
-.overlay:target+.popup {
-    -webkit-transform: translate(-50%, 0);
-
-    transform: translate(-50%, 0);
-    top: 20%;
-}
-
-
-/* frame */
-.popup embed,
-.popup iframe {
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display:block;
-    margin: auto;
-    min-width: 320px;
-    max-width: 600px;
-    width: 100%;
 }
 
 input{

@@ -4,12 +4,18 @@ body{
 
 }
 
-h4{
-     margin-left: 10%;
- }
+p {
+    color: #9d9da4;
+    font-family: monospace;
+    text-align: center;
+}
 
 h2{
     text-align: center;
+}
+
+h4{
+     margin-left: 10%;
 }
 
 /*hide*/
@@ -30,7 +36,7 @@ h2{
 label {
     cursor:pointer
 }
-/*modal*/
+
 /* Full-width input fields */
 input[type=text], input[type=password], input[type=email] {
     width: 100%;
@@ -66,6 +72,11 @@ button:hover{
     display: none;
 }
 
+#error{
+    display: none;
+}
+
+
 /* Extra styles for the button */
 .cancelbtn {
     width: 35%;
@@ -83,7 +94,7 @@ span.psw {
     padding-top: 16px;
 }
 
-/* The Modal (background) */
+/* The Modal */
 .modal {
     display: none; /* Hidden by default */
     float: right;
@@ -130,7 +141,6 @@ span.psw {
 }
 
 /*Like*/
-
 #like_content {
     padding: 40px 0 0;
     font-size: 18px;
@@ -152,11 +162,6 @@ span.psw {
     border-radius: 8px;
     font-family: monospace;
     font-size: 100%;
-}
-p {
-    color: #9d9da4;
-    font-family: monospace;
-    text-align: center;
 }
 
 /*profile content */
@@ -182,11 +187,6 @@ list-style-type:none;
 
 .profile_btn{
     width: 13%;
-
-}
-
-#error{
-    display: none;
 }
 
 /*play button*/
@@ -195,22 +195,5 @@ list-style-type:none;
     position: relative;
     display: flex;
     padding: 100px 0;
-
 }
 
-/* The Close Button (x)
-.close {
-    position: absolute;
-    right: 100px;
-    top: 0;
-    color: #000;
-    font-size: 45px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: blue;
-    cursor: pointer;
-}
-*/
