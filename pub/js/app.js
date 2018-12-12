@@ -49,6 +49,45 @@ function Login(content) {
   } else {
     prof_btn.style.display = "block";
   }
+
+  let logOut_btn = document.getElementById("logout_btn");
+  if (logOut_btn.style.display === "block") {
+    logOut_btn.style.display = "none";
+  } else {
+    logOut_btn.style.display = "block";
+  }
+}
+
+
+function LogOut(){
+  let like = document.getElementById("like_content");
+  if (like.style.display === "none") {
+    like.style.display = "block";
+  } else {
+    like.style.display = "none";
+  }
+
+  let log_btn = document.getElementById("login_btn");
+  if (log_btn.style.display === "block") {
+    log_btn.style.display = "none";
+  } else {
+    log_btn.style.display = "block";
+  }
+
+  let prof_btn = document.getElementById("profile_content");
+  if (prof_btn.style.display === "none") {
+    prof_btn.style.display = "block";
+  } else {
+    prof_btn.style.display = "none";
+  }
+
+  let logOut_btn = document.getElementById("logout_btn");
+  if (logOut_btn.style.display === "none") {
+    logOut_btn.style.display = "block";
+  } else {
+    logOut_btn.style.display = "none";
+  }
+
 }
 
 function error_div(){
