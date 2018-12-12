@@ -32,19 +32,15 @@
     <div id="database" class="box">
         <h1>Database</h1>
         <div id="catButton"></div>
-        <div id="category">
+
+    </div>
+
+    <div id="category" class="box">
             <input type="text" id="searchInput" onkeyup="searchFiles()" placeholder="Enter name.." title="Type in a name">
             <ul id="music"></ul>
         </div>
 
-        <a href="#x" class="overlay" id="win"></a>
-        <div class="popup">
-            <h1>Adele</h1>
-            <img src="img/adele.jpg" alt="" height="250" width="300" class="center"/>
-            <p>Duration 3:05</p>
-        </div>
 
-    </div>
 
     <div id="playlist" class="box">
         <h1>Playlist</h1>
@@ -96,6 +92,7 @@
     </div>
 
 </div>
+
     <form action="/upload" method="post" enctype="multipart/form-data" >
         <input type="file" id="mp3file" multiple name="mp3" accept="audio/*">
         <br />

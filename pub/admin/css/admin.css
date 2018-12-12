@@ -22,12 +22,17 @@ li{
 
 div.box {
     box-sizing: border-box;
-    width: 50%;
+    width: 25%;
     border: 5px double cornflowerblue;
     float: left;
-    height: 550px;
+    height: 600px;
 }
+/* boxit*/
 
+#database{
+    width: 200px;
+}
+/*
 #category{
     box-sizing: border-box;
     border: 5px double cornflowerblue;
@@ -39,7 +44,9 @@ div.box {
     position: relative;
 }
 
+/*
 
+ */
 /* modal button*/
 .button, .button2, .button3 {
     background-color: lightslategrey;
@@ -99,7 +106,7 @@ div.box {
     cursor: pointer;
 }
 
-/* ovarlay  */
+/* ovarlay */
 .overlay {
     top: 0;
     right: 0;
@@ -156,6 +163,7 @@ div.box {
     top: 20%;
 }
 
+
 /* frame */
 .popup embed,
 .popup iframe {
@@ -184,16 +192,16 @@ button {
     background-color: lightslategrey;
     color: white;
     padding: 20px;
-    margin-left: 10px;
+    margin-left: 20px;
     border: none;
     cursor: pointer;
-    width: 15%;
-    float: left;
+    width: 150px;
     border-radius: 8px;
     text-align: center;
     font-family: monospace;
     font-size: 20px;
     margin-top: 20px;
+
 }
 
 button:hover {
